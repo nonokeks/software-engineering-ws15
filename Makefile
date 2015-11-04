@@ -12,6 +12,17 @@ main: $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 
 test:
 	./main DollarToEuro 10000
+	./main EuroToDollar 10000
+	./main PoundsToEuro 222
+	./main EuroToPounds	555.8
+	./main FahrenheitToCelsius 88.78
+	./main CelsiusToFahrenheit -11
+	./main KelvinToCelsius 235
+	./main CelsiusToKelvin 36.8
+	./main MilesToKilometer 726.987
+	./main KilometerToMiles 435.7
+	./main InchToCentimeter 44.3
+	./main CentimeterToInch 12.7
 
 clean:
 	rm main *.o
