@@ -3,8 +3,8 @@
 
 int main(int argc, char* argv[])
 {
-  std::string conversion = argv[0];
-  std::string value = argv[1];
+  std::string conversion = argv[1];
+  std::string value = argv[2];
 
   /*
    * TODO
