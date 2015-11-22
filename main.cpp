@@ -15,9 +15,11 @@
 
 int main(int argc, char* argv[])
 {
+
   // ./main wird mit gezählt, deshalb 1 und 2
   std::string conversion = argv[1];
   std::string given_value = argv[2];
+
 
   //Convert string to double
   double value;
