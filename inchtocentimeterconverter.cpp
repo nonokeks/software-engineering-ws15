@@ -9,7 +9,7 @@ InchToCentimeterConverter::InchToCentimeterConverter()
 /*In: double value of inch
  *Out: centimeter value of input inch
  */
-double InchToCentimeterConverter::convert(double inInch){
+double InchToCentimeterConverter::convert(const double inInch)const{
   return inInch*2.54;
 }
 

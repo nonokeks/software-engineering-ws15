@@ -7,7 +7,7 @@ class CurrencyConverter : public UnitConverter
 {
   public:
     CurrencyConverter();
-    virtual double convert(double length) = 0;
+    virtual double convert(double length) const = 0;
     virtual std::string toString() const = 0;
     virtual void print() const = 0;
 };

@@ -10,9 +10,8 @@ ConverterFactory* ConverterFactory::get_instance(){
 
 UnitConverter* ConverterFactory::create(std::string const& name) const{
 	//Wenn Converter exisitiert
-	if (converter_.find(name) != nullptr)
+	if (converter_.find(name) != converter_.end())
 	{
-		//return new converter_.find(name)->second;
 		//für Prototype clone Methode
 		return converter_.find(name)->second->clone();
 	}

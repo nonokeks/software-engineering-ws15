@@ -8,7 +8,7 @@ class CelsiusToFahrenheitConverter : public TemperatureConverter
 {
   public:
     CelsiusToFahrenheitConverter();
-    double convert(const double inValue) override;
+    double convert(const double inValue) const override;
     std::string toString() const override;
     void print() const override;
     UnitConverter* clone() const override;

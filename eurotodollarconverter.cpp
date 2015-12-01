@@ -9,7 +9,7 @@ EuroToDollarConverter::EuroToDollarConverter()
 /*In: double value of euro
  *Out: dollar value of input euro 31.10.2105
  */
-double EuroToDollarConverter::convert(double inEuro){
+double EuroToDollarConverter::convert(const double inEuro)const{
   return inEuro * 1.1009;
 }
 

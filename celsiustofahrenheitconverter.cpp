@@ -9,7 +9,7 @@ CelsiusToFahrenheitConverter::CelsiusToFahrenheitConverter()
 /*In: double value of celsius
  *Out: fahrenheit value of input celsius
  */
-double CelsiusToFahrenheitConverter::convert( const double inValue){
+double CelsiusToFahrenheitConverter::convert( const double inValue) const {
   return (1.8) * inValue + 32;
 }
 

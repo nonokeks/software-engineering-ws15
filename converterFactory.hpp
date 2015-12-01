@@ -18,7 +18,6 @@
 #include "poundstoeuroconverter.hpp"
 #include "centimetertoinchconverter.hpp"
 
-typedef std::pair<std::string, std::shared_ptr(UnitConverter)> p;
 
 class ConverterFactory
 {
@@ -35,22 +34,22 @@ private:
 	ConverterFactory();
 	~ConverterFactory();
 
-	static ConverterFactory *instance_ = nullptr;
+	static ConverterFactory* instance_;
 
-	std::map<std::string, std::shared_ptr(UnitConverter)> converter_ =
+	std::map<std::string, std::shared_ptr<UnitConverter>> converter_ =
 		{
-			p("celsiustofahrenheit", std::make_shared<CelsiusToFahrenheitConverter>()),
-			p("fahrenheittocelsius", std::make_shared<FahrenheitToCelsiusConverter>()),
-			p("celsiustokelvin", 	 std::make_shared<CelsiusToKelvinConverter>()),
-			p("kelvintocelsius", 	 std::make_shared<KelvinToCelsiusConverter>()),
-			p("centimetertoinch", 	 std::make_shared<CentimeterToInchConverter>()),
-			p("inchtocentimeter", 	 std::make_shared<InchToCentimeterConverter>()),
-			p("kilometertomiles",  	 std::make_shared<KilometerToMilesConverter>()),
-			p("milestokilometer", 	 std::make_shared<MilesToKilometerConverter>()),
-			p("eurotodollar", 		 std::make_shared<EuroToDollarConverter>()),
-			p("eurotopound", 		 std::make_shared<EuroToPoundsConverter>()),
-			p("poundstoeuro", 		 std::make_shared<PoundsToEuroConverter>()),
-			p("dollartoeuro", 		 std::make_shared<DollarToEuroConverter>()),
+			std::make_pair("celsiustofahrenheit", std::make_shared<CelsiusToFahrenheitConverter>()),
+			std::make_pair("fahrenheittocelsius", std::make_shared<FahrenheitToCelsiusConverter>()),
+			std::make_pair("celsiustokelvin", 	 std::make_shared<CelsiusToKelvinConverter>()),
+			std::make_pair("kelvintocelsius", 	 std::make_shared<KelvinToCelsiusConverter>()),
+			std::make_pair("centimetertoinch", 	 std::make_shared<CentimeterToInchConverter>()),
+			std::make_pair("inchtocentimeter", 	 std::make_shared<InchToCentimeterConverter>()),
+			std::make_pair("kilometertomiles",  	 std::make_shared<KilometerToMilesConverter>()),
+			std::make_pair("milestokilometer", 	 std::make_shared<MilesToKilometerConverter>()),
+			std::make_pair("eurotodollar", 		 std::make_shared<EuroToDollarConverter>()),
+			std::make_pair("eurotopound", 		 std::make_shared<EuroToPoundsConverter>()),
+			std::make_pair("poundstoeuro", 		 std::make_shared<PoundsToEuroConverter>()),
+			std::make_pair("dollartoeuro", 		 std::make_shared<DollarToEuroConverter>()),
 		};
 };
 

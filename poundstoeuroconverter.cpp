@@ -9,7 +9,7 @@ PoundsToEuroConverter::PoundsToEuroConverter()
 /*In: double value of Pounds
  *Out: Euro value of input Pounds as of 31.10.15
  */
-double PoundsToEuroConverter::convert(const double inPounds){
+double PoundsToEuroConverter::convert(const double inPounds) const{
   return inPounds*1.4041239;
 }
 

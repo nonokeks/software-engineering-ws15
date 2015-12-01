@@ -9,7 +9,7 @@ EuroToPoundsConverter::EuroToPoundsConverter()
 /*In: double value of euro
  *Out: pounds value of input euro 31.10.2105
  */
-double EuroToPoundsConverter::convert(double inEuro){
+double EuroToPoundsConverter::convert(const double inEuro)const{
   return inEuro * 0.712187864;
 }
 
