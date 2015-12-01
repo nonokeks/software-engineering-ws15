@@ -20,3 +20,7 @@ std::string KelvinToCelsiusConverter::toString() const{
 void KelvinToCelsiusConverter::print() const{
   std::cout << toString();
 }
+
+UnitConverter*  KelvinToCelsiusConverter::clone() const{
+	return new KelvinToCelsiusConverter();
+}

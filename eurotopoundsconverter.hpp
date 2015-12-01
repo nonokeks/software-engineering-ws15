@@ -10,6 +10,7 @@ class EuroToPoundsConverter : public CurrencyConverter
     double convert(double inCelsius);
     std::string toString() const;
     void print() const;
+    UnitConverter*  clone() const;
 };
 
 #endif // EUROTOPOUNDSCONVERTER_H

@@ -20,3 +20,7 @@ std::string MilesToKilometerConverter::toString() const{
 void MilesToKilometerConverter::print() const{
   std::cout << toString();
 }
+
+UnitConverter* MilesToKilometerConverter::clone() const{
+	return new MilesToKilometerConverter();
+}

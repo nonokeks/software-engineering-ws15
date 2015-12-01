@@ -9,8 +9,8 @@ CelsiusToFahrenheitConverter::CelsiusToFahrenheitConverter()
 /*In: double value of celsius
  *Out: fahrenheit value of input celsius
  */
-double CelsiusToFahrenheitConverter::convert(double inCelsius){
-  return (1.8) * inCelsius + 32;
+double CelsiusToFahrenheitConverter::convert( const double inValue){
+  return (1.8) * inValue + 32;
 }
 
 std::string CelsiusToFahrenheitConverter::toString() const{
@@ -19,4 +19,9 @@ std::string CelsiusToFahrenheitConverter::toString() const{
 
 void CelsiusToFahrenheitConverter::print() const{
   std::cout << toString();
+}
+
+UnitConverter* CelsiusToFahrenheitConverter::clone() const{
+	return new CelsiusToFahrenheitConverter();
+	return nullptr;
 }

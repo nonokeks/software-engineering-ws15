@@ -10,6 +10,7 @@ class InchToCentimeterConverter : public LengthConverter
     double convert(double inInch);
     std::string toString() const;
     void print() const;
+    UnitConverter* clone() const;
 };
 
 #endif // INCHTOCENTIMETERCONVERTER_H

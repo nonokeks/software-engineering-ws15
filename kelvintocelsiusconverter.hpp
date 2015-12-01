@@ -10,6 +10,7 @@ class KelvinToCelsiusConverter : public TemperatureConverter
     double convert(double inKelvin);
     std::string toString() const;
     void print() const;
+    UnitConverter*  clone() const;
 };
 
 #endif // KELVINTOCELSIUSCONVERTER_H

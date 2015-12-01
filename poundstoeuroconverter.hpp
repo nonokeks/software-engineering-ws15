@@ -7,9 +7,10 @@ class PoundsToEuroConverter : public CurrencyConverter
 {
   public:
     PoundsToEuroConverter();
-    double convert(double inDollars);
+    double convert(const double inDollars);
     std::string toString() const;
     void print() const;
+    UnitConverter* clone() const;
 };
 
 #endif // POUNDSTOEUROCONVERTER_H

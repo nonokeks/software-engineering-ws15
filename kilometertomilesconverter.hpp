@@ -10,6 +10,7 @@ class KilometerToMilesConverter : public LengthConverter
     double convert(double inKilometer);
     std::string toString() const;
     void print() const;
+    UnitConverter*  clone() const;
 };
 
 #endif // KILOMETERTOMILESCONVERTER_H

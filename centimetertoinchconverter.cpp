@@ -20,3 +20,7 @@ std::string CentimeterToInchConverter::toString() const{
 void CentimeterToInchConverter::print() const{
   std::cout << toString();
 }
+
+UnitConverter*  CentimeterToInchConverter::clone() const{
+	return new CentimeterToInchConverter();
+}

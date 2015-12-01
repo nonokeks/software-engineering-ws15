@@ -20,3 +20,7 @@ std::string FahrenheitToCelsiusConverter::toString() const{
 void FahrenheitToCelsiusConverter::print() const{
   std::cout << toString();
 }
+
+UnitConverter*  FahrenheitToCelsiusConverter::clone() const{
+	return new FahrenheitToCelsiusConverter();
+}

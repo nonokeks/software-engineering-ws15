@@ -20,3 +20,7 @@ std::string EuroToPoundsConverter::toString() const{
 void EuroToPoundsConverter::print() const{
   std::cout << toString();
 }
+
+UnitConverter*  EuroToPoundsConverter::clone() const{
+	return new EuroToPoundsConverter();
+}
