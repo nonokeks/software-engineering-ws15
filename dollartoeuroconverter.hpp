@@ -10,7 +10,7 @@ class DollarToEuroConverter : public CurrencyConverter
     double convert(const double inDollars) const override;
     std::string toString() const override;
     void print() const override;
-    UnitConverter*  clone() const override;
+    DollarToEuroConverter*  clone() const override;
 };
 
 #endif // DOLLARTOEUROCONVERTER_H

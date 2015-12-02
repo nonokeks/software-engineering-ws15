@@ -17,6 +17,9 @@
 #include "../poundstoeuroconverter.hpp"
 #include "../centimetertoinchconverter.hpp"
 
+//Factory
+#include "../converterFactory.hpp"
+
 //celsius to fahrenheit
 int t1()
 {
@@ -49,8 +52,6 @@ int t2()
   f = 0.0;
   c = fahrenheittocelsius->convert(f);
   TINYTEST_EQUAL_EPSILON(-17.7777777778, c)
-  
-  
   
   f = 123.4567;
   c = fahrenheittocelsius->convert(f);
@@ -253,6 +254,30 @@ int t11()
   return 1; // Always return a value different than 0 at test end.
 }
 
+
+
+/*---------------------------------------------------------------------------*/
+//Factorytest
+
+int t12()
+{
+
+  auto factory1 = ConverterFactory::instance();
+  auto factory2 = ConverterFactory::instance();
+
+  auto converter1 = factory1->create("eurotopounds");
+  auto converter2 = factory2->create("eurotopounds");
+
+  bool samefactory = (factory1 == factory2) ? true : false;
+  bool sameconverter = (converter1 == converter2) ? true : false;
+
+  TINYTEST_EQUAL(samefactory, true);
+  TINYTEST_EQUAL(sameconverter, false); 
+
+
+  return 1;
+}
+
 TINYTEST_START_SUITE(Converter);
   TINYTEST_ADD_TEST(t1);
   TINYTEST_ADD_TEST(t2);
@@ -265,6 +290,7 @@ TINYTEST_START_SUITE(Converter);
   TINYTEST_ADD_TEST(t9);
   TINYTEST_ADD_TEST(t10);
   TINYTEST_ADD_TEST(t11);
+  TINYTEST_ADD_TEST(t12);
 TINYTEST_END_SUITE();
 
 TINYTEST_MAIN_SINGLE_SUITE(Converter);

@@ -21,6 +21,6 @@ void FahrenheitToCelsiusConverter::print() const{
   std::cout << toString();
 }
 
-UnitConverter*  FahrenheitToCelsiusConverter::clone() const{
+FahrenheitToCelsiusConverter*  FahrenheitToCelsiusConverter::clone() const{
 	return new FahrenheitToCelsiusConverter();
 }

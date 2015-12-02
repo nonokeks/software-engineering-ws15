@@ -21,6 +21,6 @@ void CentimeterToInchConverter::print() const{
   std::cout << toString();
 }
 
-UnitConverter*  CentimeterToInchConverter::clone() const{
+CentimeterToInchConverter*  CentimeterToInchConverter::clone() const{
 	return new CentimeterToInchConverter();
 }

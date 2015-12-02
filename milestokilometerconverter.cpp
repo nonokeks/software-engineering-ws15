@@ -21,6 +21,6 @@ void MilesToKilometerConverter::print() const{
   std::cout << toString();
 }
 
-UnitConverter* MilesToKilometerConverter::clone() const{
+MilesToKilometerConverter* MilesToKilometerConverter::clone() const{
 	return new MilesToKilometerConverter();
 }

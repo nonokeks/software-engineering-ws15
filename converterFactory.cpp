@@ -1,7 +1,13 @@
 #include "converterFactory.hpp"
 
+ConverterFactory::ConverterFactory(){}
+//ConverterFactory::~ConverterFactory(){}
+
+
+ConverterFactory* ConverterFactory::instance_ = nullptr;
+
 //Singelton
-ConverterFactory* ConverterFactory::get_instance(){
+ConverterFactory* ConverterFactory::instance(){
 	if(instance_ == nullptr){
 		instance_ = new ConverterFactory();
 	}

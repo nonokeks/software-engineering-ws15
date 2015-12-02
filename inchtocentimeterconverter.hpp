@@ -10,7 +10,7 @@ class InchToCentimeterConverter : public LengthConverter
     double convert(const double inInch)const override;
     std::string toString() const override;
     void print() const override;
-    UnitConverter* clone() const override;
+    InchToCentimeterConverter* clone() const override;
 };
 
 #endif // INCHTOCENTIMETERCONVERTER_H

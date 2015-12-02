@@ -21,6 +21,6 @@ void InchToCentimeterConverter::print() const{
   std::cout << toString();
 }
 
-UnitConverter*  InchToCentimeterConverter::clone() const{
+InchToCentimeterConverter*  InchToCentimeterConverter::clone() const{
 	return new InchToCentimeterConverter();
 }

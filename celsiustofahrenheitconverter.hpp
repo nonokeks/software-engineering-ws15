@@ -11,7 +11,7 @@ class CelsiusToFahrenheitConverter : public TemperatureConverter
     double convert(const double inValue) const override;
     std::string toString() const override;
     void print() const override;
-    UnitConverter* clone() const override;
+    CelsiusToFahrenheitConverter* clone() const override;
 };
 
 #endif // CELSIUSTOFAHRENHEITCONVERTER_H

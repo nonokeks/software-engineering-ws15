@@ -21,6 +21,6 @@ void CelsiusToKelvinConverter::print() const{
   std::cout << toString();
 }
 
-UnitConverter*  CelsiusToKelvinConverter::clone() const{
+CelsiusToKelvinConverter*  CelsiusToKelvinConverter::clone() const{
 	return new CelsiusToKelvinConverter();
 }

@@ -24,7 +24,7 @@ class ConverterFactory
 public:
 	
 	//Singelton
-	ConverterFactory* get_instance();
+	static ConverterFactory* instance();
 
 	UnitConverter* create(std::string const& name) const;
 
@@ -32,7 +32,7 @@ public:
 
 private:
 	ConverterFactory();
-	~ConverterFactory();
+	//~ConverterFactory();
 
 	static ConverterFactory* instance_;
 
@@ -40,16 +40,16 @@ private:
 		{
 			std::make_pair("celsiustofahrenheit", std::make_shared<CelsiusToFahrenheitConverter>()),
 			std::make_pair("fahrenheittocelsius", std::make_shared<FahrenheitToCelsiusConverter>()),
-			std::make_pair("celsiustokelvin", 	 std::make_shared<CelsiusToKelvinConverter>()),
-			std::make_pair("kelvintocelsius", 	 std::make_shared<KelvinToCelsiusConverter>()),
-			std::make_pair("centimetertoinch", 	 std::make_shared<CentimeterToInchConverter>()),
-			std::make_pair("inchtocentimeter", 	 std::make_shared<InchToCentimeterConverter>()),
-			std::make_pair("kilometertomiles",  	 std::make_shared<KilometerToMilesConverter>()),
-			std::make_pair("milestokilometer", 	 std::make_shared<MilesToKilometerConverter>()),
-			std::make_pair("eurotodollar", 		 std::make_shared<EuroToDollarConverter>()),
-			std::make_pair("eurotopound", 		 std::make_shared<EuroToPoundsConverter>()),
-			std::make_pair("poundstoeuro", 		 std::make_shared<PoundsToEuroConverter>()),
-			std::make_pair("dollartoeuro", 		 std::make_shared<DollarToEuroConverter>()),
+			std::make_pair("celsiustokelvin", 	  std::make_shared<CelsiusToKelvinConverter>()),
+			std::make_pair("kelvintocelsius", 	  std::make_shared<KelvinToCelsiusConverter>()),
+			std::make_pair("centimetertoinch", 	  std::make_shared<CentimeterToInchConverter>()),
+			std::make_pair("inchtocentimeter", 	  std::make_shared<InchToCentimeterConverter>()),
+			std::make_pair("kilometertomiles",    std::make_shared<KilometerToMilesConverter>()),
+			std::make_pair("milestokilometer", 	  std::make_shared<MilesToKilometerConverter>()),
+			std::make_pair("eurotodollar", 		  std::make_shared<EuroToDollarConverter>()),
+			std::make_pair("eurotopounds", 		  std::make_shared<EuroToPoundsConverter>()),
+			std::make_pair("poundstoeuro", 		  std::make_shared<PoundsToEuroConverter>()),
+			std::make_pair("dollartoeuro", 		  std::make_shared<DollarToEuroConverter>()),
 		};
 };
 

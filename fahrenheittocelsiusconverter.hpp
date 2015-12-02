@@ -10,7 +10,7 @@ class FahrenheitToCelsiusConverter : public TemperatureConverter
     double convert(const double inFahrenheit) const override;
     std::string toString() const override;
     void print() const override;
-    UnitConverter*  clone() const override;
+    FahrenheitToCelsiusConverter*  clone() const override;
 };
 
 #endif // FAHRENHEITTOCELSIUSCONVERTER_H

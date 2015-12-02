@@ -21,7 +21,7 @@ void CelsiusToFahrenheitConverter::print() const{
   std::cout << toString();
 }
 
-UnitConverter* CelsiusToFahrenheitConverter::clone() const{
+CelsiusToFahrenheitConverter* CelsiusToFahrenheitConverter::clone() const{
 	return new CelsiusToFahrenheitConverter();
 	return nullptr;
 }
