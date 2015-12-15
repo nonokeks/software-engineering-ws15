@@ -1,12 +1,15 @@
 #ifndef MILESTOKILOMETERCONVERTER_H
 #define MILESTOKILOMETERCONVERTER_H
 
-#include "lengthconverter.hpp"
+#include "decorator.hpp"
+#include "unitconverter.hpp"
+#include <memory>
 
-class MilesToKilometerConverter : public LengthConverter
+class MilesToKilometerConverter : public Decorator
 {
   public:
     MilesToKilometerConverter();
+    MilesToKilometerConverter(std::shared_ptr<UnitConverter> converter);
     double convert(const double inMiles)const override;
     std::string toString() const override;
     void print() const override;

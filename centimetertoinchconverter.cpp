@@ -2,9 +2,9 @@
 
 #include <string>
 
-CentimeterToInchConverter::CentimeterToInchConverter()
-{
-}
+CentimeterToInchConverter::CentimeterToInchConverter(): Decorator{} {}
+CentimeterToInchConverter::CentimeterToInchConverter(std::shared_ptr<UnitConverter> converter): 
+Decorator{converter} {}
 
 /*In: double value of inch
  *Out: centimeter value of input inch

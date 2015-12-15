@@ -1,12 +1,15 @@
 #ifndef INCHTOCENTIMETERCONVERTER_H
 #define INCHTOCENTIMETERCONVERTER_H
 
-#include "lengthconverter.hpp"
+#include "decorator.hpp"
+#include "unitconverter.hpp"
+#include <memory>
 
-class InchToCentimeterConverter : public LengthConverter
+class InchToCentimeterConverter : public Decorator
 {
   public:
     InchToCentimeterConverter();
+    InchToCentimeterConverter(std::shared_ptr<UnitConverter> converter);
     double convert(const double inInch)const override;
     std::string toString() const override;
     void print() const override;

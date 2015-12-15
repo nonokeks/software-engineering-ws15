@@ -2,9 +2,8 @@
 
 #include <string>
 
-EuroToDollarConverter::EuroToDollarConverter()
-{
-}
+EuroToDollarConverter::EuroToDollarConverter(): Decorator{} {}
+EuroToDollarConverter::EuroToDollarConverter(std::shared_ptr<UnitConverter> converter): Decorator{converter} {}
 
 /*In: double value of euro
  *Out: dollar value of input euro 31.10.2105

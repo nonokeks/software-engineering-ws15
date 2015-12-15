@@ -1,12 +1,15 @@
 #ifndef EUROTODOLLARCONVERTER_H
 #define EUROTODOLLARCONVERTER_H
 
-#include "currencyconverter.hpp"
+#include "decorator.hpp"
+#include "unitconverter.hpp"
+#include <memory>
 
-class EuroToDollarConverter : public CurrencyConverter
+class EuroToDollarConverter : public Decorator
 {
   public:
     EuroToDollarConverter();
+    EuroToDollarConverter(std::shared_ptr<UnitConverter> converter);
     double convert(const double inCelsius)const override;
     std::string toString() const override;
     void print() const override;
