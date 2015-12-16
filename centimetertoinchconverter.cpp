@@ -3,8 +3,8 @@
 #include <string>
 
 CentimeterToInchConverter::CentimeterToInchConverter(){}
-//CentimeterToInchConverter::CentimeterToInchConverter(std::shared_ptr<UnitConverter> converter): 
-//Decorator{converter} {}
+CentimeterToInchConverter::CentimeterToInchConverter(std::shared_ptr<UnitConverter> converter): 
+LengthConverter{converter} {}
 
 /*In: double value of inch
  *Out: centimeter value of input inch

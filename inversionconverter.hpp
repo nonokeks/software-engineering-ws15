@@ -14,6 +14,8 @@ public:
 	double convert(const double inValue)const override;
     std::string toString() const override;
     void print() const override;
+    UnitConverter* clone() const override;
+    //void link(UnitConverter* c) const override;
 private:
 	std::shared_ptr<UnitConverter> c_;
 };

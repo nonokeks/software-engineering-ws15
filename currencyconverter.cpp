@@ -6,3 +6,4 @@ CurrencyConverter::CurrencyConverter()
 {
 }
 
+CurrencyConverter::CurrencyConverter(std::shared_ptr<UnitConverter> converter):Decorator{converter}{}

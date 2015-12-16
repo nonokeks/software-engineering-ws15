@@ -9,7 +9,7 @@ class EuroToPoundsConverter : public CurrencyConverter
 {
   public:
     EuroToPoundsConverter();
-    //EuroToPoundsConverter(std::shared_ptr<UnitConverter> converter);
+    EuroToPoundsConverter(std::shared_ptr<UnitConverter> converter);
     double convert(const double inCelsius)const override;
     std::string toString() const override;
     void print() const override;

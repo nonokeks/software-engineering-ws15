@@ -14,6 +14,8 @@
 #include "poundstoeuroconverter.hpp"
 #include "centimetertoinchconverter.hpp"
 #include "converterFactory.hpp"
+#include "decorator.hpp"
+#include "inversionconverter.hpp"
 
 int main(int argc, char* argv[])
 {
@@ -42,11 +44,11 @@ int main(int argc, char* argv[])
   }
   */
 
-  std::shared_ptr<UnitConverter> converter = std::make_shared<MilesToKilometerConverter>();
+  auto converter = std::make_shared<MilesToKilometerConverter>();
   double w1 = converter->convert(value);
   std::cout << w1 << std::endl;
-  //converter = std::make_shared<InchToCentimeterConverter>(converter);
-  double w2 = converter->convert(value);
+  auto converter2 = std::make_shared<MilesToKilometerConverter>(std::make_shared<MilesToKilometerConverter>());
+  double w2 = converter2->convert(value);
 
   std::cout << w2 << std::endl;
   return 1;

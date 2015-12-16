@@ -3,8 +3,8 @@
 #include <string>
 
 KilometerToMilesConverter::KilometerToMilesConverter(){}
-//KilometerToMilesConverter::KilometerToMilesConverter(std::shared_ptr<UnitConverter> converter): 
-//Decorator{converter} {}
+KilometerToMilesConverter::KilometerToMilesConverter(std::shared_ptr<UnitConverter> converter): 
+LengthConverter{converter} {}
 /*In: double value of kilometer
  *Out: miles value of input kilometer
  */

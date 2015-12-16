@@ -13,6 +13,7 @@ public:
 	double convert(const double inValue)const override;
     std::string toString() const override;
     void print() const override;
+    void link(std::shared_ptr<UnitConverter> c);
 	
 private:
 	std::shared_ptr<UnitConverter> myconverter_;
