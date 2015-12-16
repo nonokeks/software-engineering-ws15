@@ -2,14 +2,14 @@
 #define INCHTOCENTIMETERCONVERTER_H
 
 #include "decorator.hpp"
-#include "unitconverter.hpp"
+#include "lengthconverter.hpp"
 #include <memory>
 
-class InchToCentimeterConverter : public Decorator
+class InchToCentimeterConverter : public LengthConverter
 {
   public:
     InchToCentimeterConverter();
-    InchToCentimeterConverter(std::shared_ptr<UnitConverter> converter);
+    //InchToCentimeterConverter(std::shared_ptr<UnitConverter> converter);
     double convert(const double inInch)const override;
     std::string toString() const override;
     void print() const override;

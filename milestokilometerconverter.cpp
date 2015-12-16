@@ -2,9 +2,9 @@
 
 #include <string>
 
-MilesToKilometerConverter::MilesToKilometerConverter(): Decorator{} {}
-MilesToKilometerConverter::MilesToKilometerConverter(std::shared_ptr<UnitConverter> converter): 
-Decorator{converter} {}
+MilesToKilometerConverter::MilesToKilometerConverter(){}
+//MilesToKilometerConverter::MilesToKilometerConverter(std::shared_ptr<UnitConverter> converter): 
+//Decorator{converter} {}
 /*In: double value of miles
  *Out: kilometer value of input miles
  */

@@ -2,8 +2,8 @@
 
 #include <string>
 
-EuroToPoundsConverter::EuroToPoundsConverter():Decorator{} {}
-EuroToPoundsConverter::EuroToPoundsConverter(std::shared_ptr<UnitConverter> converter): Decorator{converter} {}
+EuroToPoundsConverter::EuroToPoundsConverter(){}
+//EuroToPoundsConverter::EuroToPoundsConverter(std::shared_ptr<UnitConverter> converter): Decorator{converter} {}
 
 /*In: double value of euro
  *Out: pounds value of input euro 31.10.2105

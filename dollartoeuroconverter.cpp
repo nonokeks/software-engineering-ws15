@@ -2,8 +2,8 @@
 
 #include <string>
 
-DollarToEuroConverter::DollarToEuroConverter():Decorator{} {}
-DollarToEuroConverter::DollarToEuroConverter(std::shared_ptr<UnitConverter> converter):Decorator{converter} {}
+DollarToEuroConverter::DollarToEuroConverter(){}
+//DollarToEuroConverter::DollarToEuroConverter(std::shared_ptr<UnitConverter> converter):Decorator{converter} {}
 
 /*In: double value of dollars
  *Out: Euro value of input dollars as of 9.10.15

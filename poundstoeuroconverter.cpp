@@ -2,9 +2,9 @@
 
 #include <string>
 
-PoundsToEuroConverter::PoundsToEuroConverter(): Decorator{} {}
-PoundsToEuroConverter::PoundsToEuroConverter(std::shared_ptr<UnitConverter> converter): 
-Decorator{converter} {}
+PoundsToEuroConverter::PoundsToEuroConverter(){}
+//PoundsToEuroConverter::PoundsToEuroConverter(std::shared_ptr<UnitConverter> converter): 
+//Decorator{converter} {}
 /*In: double value of Pounds
  *Out: Euro value of input Pounds as of 31.10.15
  */
