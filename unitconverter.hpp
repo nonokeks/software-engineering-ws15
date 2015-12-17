@@ -10,13 +10,14 @@ class UnitConverter
   public:
     UnitConverter();
     UnitConverter(std::shared_ptr<UnitConverter> converter);
+    ~UnitConverter();
     virtual double convert(const double inValue) const = 0;
     virtual std::string toString() const = 0;
     virtual void print() const = 0;
     virtual UnitConverter* clone() const = 0;
     //virtual void link(std::shared_ptr<UnitConverter> c) = 0;
 
-  //private:
+  protected:
   	std::shared_ptr<UnitConverter> base_;
 };
 

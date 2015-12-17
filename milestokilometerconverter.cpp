@@ -1,6 +1,7 @@
 #include "milestokilometerconverter.hpp"
 
 #include <string>
+#include <iostream>
 
 MilesToKilometerConverter::MilesToKilometerConverter(){}
 MilesToKilometerConverter::MilesToKilometerConverter(std::shared_ptr<UnitConverter> converter): 
@@ -9,13 +10,14 @@ LengthConverter{converter} {}
  *Out: kilometer value of input miles
  */
 double MilesToKilometerConverter::convert(const double inMiles)const{
-	double temp = inMiles;
+	
 	if (UnitConverter::base_ != nullptr)
 	{
-		temp = UnitConverter::base_->convert(inMiles);
+		std::cout << "base get";
+		return UnitConverter::base_->convert(inMiles*1.609);
 	}
 	
-	return temp*1.609;
+	return inMiles*1.609;
 	
     
 }

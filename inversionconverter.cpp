@@ -1,7 +1,7 @@
 #include "inversionconverter.hpp"
 
 InversionConverter::InversionConverter():Decorator{}{}
-InversionConverter::InversionConverter(std::shared_ptr<UnitConverter> converter):Decorator{},c_{converter}{}
+InversionConverter::InversionConverter(std::shared_ptr<UnitConverter> converter):Decorator{converter},c_{converter}{}
 InversionConverter::~InversionConverter(){}
 
 double InversionConverter::convert(const double inValue)const {

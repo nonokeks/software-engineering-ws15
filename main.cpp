@@ -47,9 +47,11 @@ int main(int argc, char* argv[])
   auto converter = std::make_shared<MilesToKilometerConverter>();
   double w1 = converter->convert(value);
   std::cout << w1 << std::endl;
-  auto converter2 = std::make_shared<MilesToKilometerConverter>(converter);
-  double w2 = converter2->convert(value);
+  
+  //std::shared_ptr<UnitConverter> c = std::make_shared<MilesToKilometerConverter>();
+  //auto converter2 = std::make_shared<InversionConverter>(c);
+  //double w2 = converter2->convert(value);
 
-  std::cout << w2 << std::endl;
+  //std::cout << w2 << std::endl;
   return 1;
 }
