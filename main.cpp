@@ -1,6 +1,7 @@
 #include <memory>
 #include <sstream>
 #include <algorithm>
+#include <deque>
 #include "dollartoeuroconverter.hpp"
 #include "celsiustofahrenheitconverter.hpp"
 #include "fahrenheittocelsiusconverter.hpp"
@@ -21,71 +22,54 @@
 int main(int argc, char* argv[])
 {
   
+  std::deque<Command> commands;
+
+  std::string conversion = " ";
+  std::string value_s = " ";
+  //bool invert " ";
+
+  std::cout << "Exampels: " << std::endl;
+  std::cout << "dollartoeuro 10 " << std::endl;
+  std::cout << "[converter] [value]" << std::endl;
+
+
+  for (std::string line; std::getline(std::cin, line);) {
+    //std::cout << line << std::endl;
+    
+    std::stringstream s;
+    s << line;
+    s >> conversion;
+
+    s << line;
+    s >> value_s;
+
+    double value = std::stod(value_s);
+
+    Command temp(conversion, &UnitConverter::convert, value);
+    commands.push_back(temp);
+
+  }
+
+  
+  for (unsigned i = 0; i < commands.size(); ++i)
+  {
+    commands[i].execute();
+  }
+
+  
+
+
+
+  //Decorator-Pattern
+  /*
   //std::string conversion = argv[1];
   std::string given_value = argv[1];
   
   //Convert string to double
   double value;
   std::stringstream s(given_value);
-  s >> value;
-
+  s >> value;*/
   /*
-  std::deque<Command> commands;
-
-  std::string conversion = " ";
-  std::string value " ";
-  bool invert " ";
-  auto factory = ConverterFactory::instance();
-
-  std::cout << "Exampels: " << std::endl;
-  std::cout << "dollartoeuro eurotopounds 10 " << std::endl;
-  std::cout << "[any lenghtconverter] [value] " << std::endl;
-  std::cout << "[any currencyconverter] [value] " << std::endl;
-  std::cout << "[any temperatureconverter] [value] " << std::endl;
-  std::cout << "invert dollartoeuro 10 " << std::endl;
-  std::cout << "invert [any currencyconverter] [value] " << std::endl;
-  std::cout << "invert [any currencyconverter] [value] " << std::endl;
-
-  for (std::string line; std::getline(std::cin, line);) {
-    //std::cout << line << std::endl;
-    std::string temp;
-    while (line.good()){
-
-      line >> temp;
-      if(temp.compare("invert")){
-        invert = true;
-      }
-
-
-
-
-    }
-
-    invert = false;
-
-  }
-  */
-
-
-
-  /*
-  std::transform(conversion.begin(), conversion.end(), conversion.begin(), ::tolower);
-
-  //double converted = 0;
-
-  auto factory = ConverterFactory::instance();
-  auto converter = factory->create(conversion);
-
-  if (converter != nullptr)
-  {
-      std::cout << converter->toString() << " has converted "<< value << " to " << converter->convert(value) <<"!"<<std::endl; 
-  }
-  else{
-    std::cout << "Kein gültiger Converter" << std::endl;
-  }
-  */
-
-  
   auto converter = std::make_shared<MilesToKilometerConverter>();
   double w1 = converter->convert(value);
   std::cout << "M2km " << w1 << std::endl;
@@ -102,7 +86,7 @@ int main(int argc, char* argv[])
   auto converter4 = std::make_shared<InversionConverter>(converter3);
   double w4 = converter4->convert(value);
   std::cout << "M2km invert " << w4 << std::endl;
-  
+  */
   
   return 1;
 }

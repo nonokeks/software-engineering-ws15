@@ -11,9 +11,7 @@ main: $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 	g++ -std=c++0x -Wall -c -o $@ $<
 
 test:
-	./main 20
-	./main 35
-	./main 40
+	./main 
 	
 clean:
 	rm main *.o

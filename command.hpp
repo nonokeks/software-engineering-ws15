@@ -2,12 +2,14 @@
 #define COMMAND
 
 #include "unitconverter.hpp"
+#include "converterFactory.hpp"
 #include <memory>
 
 class Command {
 	public:
 		typedef double (UnitConverter::*Action)(const double) const;
-		Command(std::shared_ptr<UnitConverter> converter, Action action, double value);
+		Command(std::string const converter, Action const action, double const value);
+		Command();
 		
 		double getValue() const;
 		
@@ -15,7 +17,8 @@ class Command {
 
 
 	private:
-		std::shared_ptr<UnitConverter> _converter;
+		std::string _converter;
+		std::shared_ptr<UnitConverter> _converterptr;
 		Action _action;
 		double _value;
 };
