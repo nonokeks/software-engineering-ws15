@@ -23,7 +23,7 @@ class ConverterFactory
 {
 public:
 	
-	//Singelton
+	//Singleton
 	static ConverterFactory* instance();
 
 	UnitConverter* create(std::string const& name) const;
