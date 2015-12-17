@@ -16,6 +16,7 @@
 #include "converterFactory.hpp"
 #include "decorator.hpp"
 #include "inversionconverter.hpp"
+#include "command.hpp"
 
 int main(int argc, char* argv[])
 {
@@ -27,6 +28,46 @@ int main(int argc, char* argv[])
   double value;
   std::stringstream s(given_value);
   s >> value;
+
+  /*
+  std::deque<Command> commands;
+
+  std::string conversion = " ";
+  std::string value " ";
+  bool invert " ";
+  auto factory = ConverterFactory::instance();
+
+  std::cout << "Exampels: " << std::endl;
+  std::cout << "dollartoeuro eurotopounds 10 " << std::endl;
+  std::cout << "[any lenghtconverter] [value] " << std::endl;
+  std::cout << "[any currencyconverter] [value] " << std::endl;
+  std::cout << "[any temperatureconverter] [value] " << std::endl;
+  std::cout << "invert dollartoeuro 10 " << std::endl;
+  std::cout << "invert [any currencyconverter] [value] " << std::endl;
+  std::cout << "invert [any currencyconverter] [value] " << std::endl;
+
+  for (std::string line; std::getline(std::cin, line);) {
+    //std::cout << line << std::endl;
+    std::string temp;
+    while (line.good()){
+
+      line >> temp;
+      if(temp.compare("invert")){
+        invert = true;
+      }
+
+
+
+
+    }
+
+    invert = false;
+
+  }
+  */
+
+
+
   /*
   std::transform(conversion.begin(), conversion.end(), conversion.begin(), ::tolower);
 
@@ -61,7 +102,7 @@ int main(int argc, char* argv[])
   auto converter4 = std::make_shared<InversionConverter>(converter3);
   double w4 = converter4->convert(value);
   std::cout << "M2km invert " << w4 << std::endl;
-
+  
   
   return 1;
 }

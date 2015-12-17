@@ -11,7 +11,7 @@ class Command {
 		
 		double getValue() const;
 		
-		double execute() const;
+		void execute() const;
 
 
 	private:

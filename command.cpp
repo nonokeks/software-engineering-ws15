@@ -1,4 +1,5 @@
 #include "command.hpp"
+#include <iostream>
 
 Command::Command(std::shared_ptr<UnitConverter> converter, Action action, double value):
 	_converter(converter),
@@ -6,10 +7,15 @@ Command::Command(std::shared_ptr<UnitConverter> converter, Action action, double
 	_value(value){}
 	
 double Command::getValue() const {
-		return _value;
-	}
+	return _value;
+}
 	
-double Command::execute() const {
-  return (_converter.get()->*_action)(_value);
+void Command::execute() const {
+	if(_converter != nullptr){
+		std::cout << (_converter.get()->*_action)(_value) << std::endl;
+	}
+    else{
+    	std::cout << "No converter found!" << std::endl;
+    }
 }
 
