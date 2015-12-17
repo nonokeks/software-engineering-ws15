@@ -11,7 +11,7 @@ LengthConverter{converter} {}
  */
 double MilesToKilometerConverter::convert(const double inMiles)const{
 	
-	if (UnitConverter::base_ != nullptr)
+	if (base_ != nullptr)
 	{
 		std::cout << "base get";
 		return UnitConverter::base_->convert(inMiles*1.609);
