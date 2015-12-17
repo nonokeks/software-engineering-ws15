@@ -18,4 +18,3 @@ void Command::execute() const {
     	std::cout << "No converter found!" << std::endl;
     }
 }
-
