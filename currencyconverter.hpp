@@ -5,7 +5,7 @@
 #include "decorator.hpp"
 #include <memory>
 
-class CurrencyConverter : public Decorator
+class CurrencyConverter : public UnitConverter
 {
   public:
     CurrencyConverter();

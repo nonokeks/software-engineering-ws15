@@ -1,8 +1,9 @@
 #include "decorator.hpp"
 
 Decorator::Decorator(){}
-Decorator::Decorator(std::shared_ptr<UnitConverter> converter): UnitConverter{}, myconverter_{converter} {}
+Decorator::Decorator(std::shared_ptr<UnitConverter> converter): UnitConverter{converter}, myconverter_{converter} {}
 
+/*
 double Decorator::convert(const double inValue)const{
 	if (myconverter_ != nullptr)
 	{
@@ -32,4 +33,4 @@ void Decorator::print() const{
 void Decorator::link(std::shared_ptr<UnitConverter> c){
   myconverter_ = c;
 }
-
+*/

@@ -10,6 +10,7 @@ CelsiusToKelvinConverter::CelsiusToKelvinConverter()
  *Out: kelvin value of input celsius
  */
 double CelsiusToKelvinConverter::convert(const double inCelsius)const{
+  
   return inCelsius + 273.15;
 }
 
@@ -22,5 +23,5 @@ void CelsiusToKelvinConverter::print() const{
 }
 
 CelsiusToKelvinConverter*  CelsiusToKelvinConverter::clone() const{
-	return new CelsiusToKelvinConverter();
+ return new CelsiusToKelvinConverter();
 }

@@ -9,7 +9,11 @@ LengthConverter{converter} {}
  *Out: miles value of input kilometer
  */
 double KilometerToMilesConverter::convert(const double inKilometer)const{
-  return inKilometer*0.62137;
+	if (UnitConverter::base_ != nullptr)
+	{
+		return UnitConverter::base_->convert(inKilometer);
+	}
+    return inKilometer*0.62137;
 }
 
 std::string KilometerToMilesConverter::toString() const{

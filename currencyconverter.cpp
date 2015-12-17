@@ -2,8 +2,6 @@
 
 #include <string>
 
-CurrencyConverter::CurrencyConverter()
-{
-}
+CurrencyConverter::CurrencyConverter():UnitConverter{}{}
 
-CurrencyConverter::CurrencyConverter(std::shared_ptr<UnitConverter> converter):Decorator{converter}{}
+CurrencyConverter::CurrencyConverter(std::shared_ptr<UnitConverter> converter):UnitConverter{converter}{}

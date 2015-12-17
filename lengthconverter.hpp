@@ -5,7 +5,7 @@
 #include "decorator.hpp"
 #include <memory>
 
-class LengthConverter : public Decorator
+class LengthConverter : public UnitConverter
 {
   public:
     LengthConverter();

@@ -9,7 +9,11 @@ EuroToPoundsConverter::EuroToPoundsConverter(std::shared_ptr<UnitConverter> conv
  *Out: pounds value of input euro 31.10.2105
  */
 double EuroToPoundsConverter::convert(const double inEuro)const{
-  return inEuro * 0.712187864;
+	if (UnitConverter::base_ != nullptr)
+	{
+		return UnitConverter::base_->convert(inEuro);
+	}
+  	return inEuro * 0.712187864;
 }
 
 std::string EuroToPoundsConverter::toString() const{

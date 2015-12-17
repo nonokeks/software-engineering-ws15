@@ -5,7 +5,7 @@ InversionConverter::InversionConverter(std::shared_ptr<UnitConverter> converter)
 InversionConverter::~InversionConverter(){}
 
 double InversionConverter::convert(const double inValue)const {
-	//ist c der converter der invertiert wird??
+	//ist c der converter der invertiert wird?? ja
 	return 0.0;
 }
 std::string InversionConverter::toString() const {

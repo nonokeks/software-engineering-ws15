@@ -10,7 +10,11 @@ LengthConverter{converter} {}
  *Out: centimeter value of input inch
  */
 double InchToCentimeterConverter::convert(const double inInch)const{
-  return inInch*2.54;
+	if (UnitConverter::base_ != nullptr)
+	{
+		return UnitConverter::base_->convert(inInch);
+	}
+    return inInch*2.54;
 }
 
 std::string InchToCentimeterConverter::toString() const{
