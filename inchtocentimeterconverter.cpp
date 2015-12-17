@@ -3,16 +3,16 @@
 #include <string>
 
 InchToCentimeterConverter::InchToCentimeterConverter(){}
-InchToCentimeterConverter::InchToCentimeterConverter(std::shared_ptr<UnitConverter> converter): 
+InchToCentimeterConverter::InchToCentimeterConverter(std::shared_ptr<LengthConverter> converter): 
 LengthConverter{converter} {}
 
 /*In: double value of inch
  *Out: centimeter value of input inch
  */
 double InchToCentimeterConverter::convert(const double inInch)const{
-	if (UnitConverter::base_ != nullptr)
+	if (base_ != nullptr)
 	{
-		return UnitConverter::base_->convert(inInch);
+		return UnitConverter::base_->convert(inInch*2.54);
 	}
     return inInch*2.54;
 }

@@ -5,15 +5,19 @@ InversionConverter::InversionConverter(std::shared_ptr<UnitConverter> converter)
 InversionConverter::~InversionConverter(){}
 
 double InversionConverter::convert(const double inValue)const {
-	//ist c der converter der invertiert wird?? ja
-	return 0.0;
+	if (UnitConverter::base_ != nullptr) {
+		return UnitConverter::base_->convert((inValue*inValue)/(c_->convert(inValue)));
+	}
 }
+
 std::string InversionConverter::toString() const {
 	return "Inversion Converter";
 }
+
 void InversionConverter::print() const{
 	std::cout << toString();
 }
+
 UnitConverter* InversionConverter::clone() const{
 	return new InversionConverter();
 }

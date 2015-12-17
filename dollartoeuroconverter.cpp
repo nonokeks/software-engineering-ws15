@@ -3,7 +3,7 @@
 #include <string>
 
 DollarToEuroConverter::DollarToEuroConverter(){}
-DollarToEuroConverter::DollarToEuroConverter(std::shared_ptr<UnitConverter> converter):CurrencyConverter{converter} {}
+DollarToEuroConverter::DollarToEuroConverter(std::shared_ptr<CurrencyConverter> converter):CurrencyConverter{converter} {}
 
 /*In: double value of dollars
  *Out: Euro value of input dollars as of 9.10.15
@@ -11,7 +11,7 @@ DollarToEuroConverter::DollarToEuroConverter(std::shared_ptr<UnitConverter> conv
 double DollarToEuroConverter::convert(const double inputDollars) const{
 	if (UnitConverter::base_ != nullptr)
 	{
-		return UnitConverter::base_->convert(inputDollars);
+		return UnitConverter::base_->convert(inputDollars*0.88);
 	}
 	else
 	{

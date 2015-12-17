@@ -4,4 +4,4 @@
 
 CurrencyConverter::CurrencyConverter():UnitConverter{}{}
 
-CurrencyConverter::CurrencyConverter(std::shared_ptr<UnitConverter> converter):UnitConverter{converter}{}
+CurrencyConverter::CurrencyConverter(std::shared_ptr<CurrencyConverter> converter):UnitConverter{converter}{}

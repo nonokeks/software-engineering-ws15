@@ -3,7 +3,7 @@
 #include <string>
 
 PoundsToEuroConverter::PoundsToEuroConverter(){}
-PoundsToEuroConverter::PoundsToEuroConverter(std::shared_ptr<UnitConverter> converter): 
+PoundsToEuroConverter::PoundsToEuroConverter(std::shared_ptr<CurrencyConverter> converter): 
 CurrencyConverter{converter} {}
 
 /*In: double value of Pounds
@@ -12,7 +12,7 @@ CurrencyConverter{converter} {}
 double PoundsToEuroConverter::convert(const double inPounds) const{
 	if (UnitConverter::base_ != nullptr)
 	{
-		return UnitConverter::base_->convert(inPounds);
+		return UnitConverter::base_->convert(inPounds*1.4041239);
 	}
     return inPounds*1.4041239;
 }
