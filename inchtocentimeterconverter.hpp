@@ -9,7 +9,7 @@ class InchToCentimeterConverter : public LengthConverter
 {
   public:
     InchToCentimeterConverter();
-    InchToCentimeterConverter(std::shared_ptr<UnitConverter> converter);
+    InchToCentimeterConverter(std::shared_ptr<LengthConverter> converter);
     double convert(const double inInch)const override;
     std::string toString() const override;
     void print() const override;

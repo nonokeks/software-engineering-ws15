@@ -48,7 +48,7 @@ int main(int argc, char* argv[])
   std::cout << w1 << std::endl;
   
   std::shared_ptr<UnitConverter> c = std::make_shared<MilesToKilometerConverter>();
-  auto converter2 = std::make_shared<InchToCentimeterConverter>(c);
+  auto converter2 = std::make_shared<InchToCentimeterConverter>();
   double w2 = converter2->convert(value);
 
   std::cout << w2 << std::endl;

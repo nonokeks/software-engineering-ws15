@@ -10,9 +10,9 @@ CurrencyConverter{converter} {}
  *Out: Euro value of input Pounds as of 31.10.15
  */
 double PoundsToEuroConverter::convert(const double inPounds) const{
-	if (UnitConverter::base_ != nullptr)
+	if (base_ != nullptr)
 	{
-		return UnitConverter::base_->convert(inPounds*1.4041239);
+		return base_->convert(inPounds*1.4041239);
 	}
     return inPounds*1.4041239;
 }

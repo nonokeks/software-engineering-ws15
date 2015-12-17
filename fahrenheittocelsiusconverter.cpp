@@ -5,12 +5,17 @@
 FahrenheitToCelsiusConverter::FahrenheitToCelsiusConverter()
 {
 }
-
+FahrenheitToCelsiusConverter::FahrenheitToCelsiusConverter(std::shared_ptr<TemperatureConverter> converter):
+TemperatureConverter{converter}{}
 /*In: double value of fahrenheit
  *Out: celsius value of input fahrenheit
  */
 double FahrenheitToCelsiusConverter::convert(const double inFahrenheit)const{
-  return ((inFahrenheit-32)/(1.8));
+	if (base_ != nullptr)
+	{
+		return base_->convert((inFahrenheit-32)/(1.8));
+	}
+    return ((inFahrenheit-32)/(1.8));
 }
 
 std::string FahrenheitToCelsiusConverter::toString() const{

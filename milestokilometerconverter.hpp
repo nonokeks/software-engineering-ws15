@@ -9,7 +9,7 @@ class MilesToKilometerConverter : public LengthConverter
 {
   public:
     MilesToKilometerConverter();
-    MilesToKilometerConverter(std::shared_ptr<UnitConverter> converter);
+    MilesToKilometerConverter(std::shared_ptr<LengthConverter> converter);
     double convert(const double inMiles)const override;
     std::string toString() const override;
     void print() const override;

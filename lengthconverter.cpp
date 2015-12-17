@@ -4,4 +4,4 @@
 
 LengthConverter::LengthConverter(){}
 
-LengthConverter::LengthConverter(std::shared_ptr<LengthConverter> converter):UnitConverter(converter){}
+LengthConverter::LengthConverter(std::shared_ptr<LengthConverter> converter):UnitConverter{converter}{}

@@ -2,11 +2,13 @@
 #define CELSIUSTOKELVINCONVERTER_H
 
 #include "temperatureconverter.hpp"
+#include <memory>
 
 class CelsiusToKelvinConverter : public TemperatureConverter
 {
   public:
     CelsiusToKelvinConverter();
+    CelsiusToKelvinConverter(std::shared_ptr<TemperatureConverter> converter);
     double convert(const double inCelsius)const override;
     std::string toString() const override;
     void print() const override;

@@ -6,11 +6,18 @@ CelsiusToFahrenheitConverter::CelsiusToFahrenheitConverter()
 {
 }
 
+CelsiusToFahrenheitConverter::CelsiusToFahrenheitConverter(std::shared_ptr<TemperatureConverter> converter): 
+TemperatureConverter{converter}{}
+
 /*In: double value of celsius
  *Out: fahrenheit value of input celsius
  */
 double CelsiusToFahrenheitConverter::convert( const double inValue) const {
-  return (1.8) * inValue + 32;
+	if (base_ != nullptr)
+	{
+		return base_->convert((1.8) * inValue + 32);
+	}
+    return (1.8) * inValue + 32;
 }
 
 std::string CelsiusToFahrenheitConverter::toString() const{

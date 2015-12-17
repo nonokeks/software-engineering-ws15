@@ -2,9 +2,8 @@
 
 #include <string>
 
-InchToCentimeterConverter::InchToCentimeterConverter(){}
-InchToCentimeterConverter::InchToCentimeterConverter(std::shared_ptr<LengthConverter> converter): 
-LengthConverter{converter} {}
+InchToCentimeterConverter::InchToCentimeterConverter():LengthConverter{}{}
+InchToCentimeterConverter::InchToCentimeterConverter(std::shared_ptr<LengthConverter> converter):LengthConverter{converter} {}
 
 /*In: double value of inch
  *Out: centimeter value of input inch
@@ -12,7 +11,7 @@ LengthConverter{converter} {}
 double InchToCentimeterConverter::convert(const double inInch)const{
 	if (base_ != nullptr)
 	{
-		return UnitConverter::base_->convert(inInch*2.54);
+		return base_->convert(inInch*2.54);
 	}
     return inInch*2.54;
 }

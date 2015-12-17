@@ -8,6 +8,9 @@ double InversionConverter::convert(const double inValue)const {
 	if (UnitConverter::base_ != nullptr) {
 		return UnitConverter::base_->convert((inValue*inValue)/(c_->convert(inValue)));
 	}
+	else{
+		return 0;
+	}
 }
 
 std::string InversionConverter::toString() const {

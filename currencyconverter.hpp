@@ -9,7 +9,7 @@ class CurrencyConverter : public UnitConverter
 {
   public:
     CurrencyConverter();
-    CurrencyConverter(std::shared_ptr<UnitConverter> converter);
+    CurrencyConverter(std::shared_ptr<CurrencyConverter> converter);
     virtual double convert(double length) const = 0;
     virtual std::string toString() const = 0;
     virtual void print() const = 0;

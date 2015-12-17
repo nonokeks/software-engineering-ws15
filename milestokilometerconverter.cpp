@@ -13,7 +13,7 @@ double MilesToKilometerConverter::convert(const double inMiles)const{
 	
 	if (base_ != nullptr)
 	{
-		return UnitConverter::base_->convert(inMiles*1.609);
+		return base_->convert(inMiles*1.609);
 	}
 	
 	return inMiles*1.609;

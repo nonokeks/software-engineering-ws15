@@ -10,7 +10,7 @@ class PoundsToEuroConverter : public CurrencyConverter
 {
   public:
     PoundsToEuroConverter();
-    PoundsToEuroConverter(std::shared_ptr<UnitConverter> converter);
+    PoundsToEuroConverter(std::shared_ptr<CurrencyConverter> converter);
     double convert(const double inDollars) const override;
     std::string toString() const override;
     void print() const override;

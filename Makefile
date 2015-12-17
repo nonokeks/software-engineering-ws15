@@ -13,7 +13,8 @@ main: $(patsubst %.cpp,%.o,$(wildcard *.cpp))
 test:
 	./main 20
 	./main 35
-
+	./main 40
+	
 clean:
 	rm main *.o
 

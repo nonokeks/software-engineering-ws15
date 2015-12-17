@@ -5,13 +5,18 @@
 CelsiusToKelvinConverter::CelsiusToKelvinConverter()
 {
 }
+CelsiusToKelvinConverter::CelsiusToKelvinConverter(std::shared_ptr<TemperatureConverter> converter):
+TemperatureConverter{converter}{}
 
 /*In: double value of celsius
  *Out: kelvin value of input celsius
  */
 double CelsiusToKelvinConverter::convert(const double inCelsius)const{
-  
-  return inCelsius + 273.15;
+    if (base_ != nullptr)
+	{
+		return base_->convert(inCelsius + 273.15);
+	}
+    return inCelsius + 273.15;
 }
 
 std::string CelsiusToKelvinConverter::toString() const{
