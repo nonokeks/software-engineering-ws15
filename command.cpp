@@ -6,10 +6,10 @@ Command::Command(std::shared_ptr<UnitConverter> converter, Action action, double
 	_value(value){}
 	
 double Command::getValue() const {
-		return _value;
-	}
+	return _value;
+}
 	
 double Command::execute() const {
-  return (_converter.get()->*_action)(_value);
+	return (_converter.get()->*_action)(_value);
 }
 
