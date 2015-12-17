@@ -43,14 +43,25 @@ int main(int argc, char* argv[])
     std::cout << "Kein gültiger Converter" << std::endl;
   }
   */
+
+  
   auto converter = std::make_shared<MilesToKilometerConverter>();
   double w1 = converter->convert(value);
-  std::cout << w1 << std::endl;
-  
-  std::shared_ptr<UnitConverter> c = std::make_shared<MilesToKilometerConverter>();
-  auto converter2 = std::make_shared<InchToCentimeterConverter>();
-  double w2 = converter2->convert(value);
+  std::cout << "M2km " << w1 << std::endl;
 
-  std::cout << w2 << std::endl;
+  std::shared_ptr<LengthConverter> c = std::make_shared<KilometerToMilesConverter>();
+  auto converter2 = std::make_shared<MilesToKilometerConverter>(c);
+  double w2 = converter2->convert(value);
+  std::cout << "M2km 2 km2M "<< w2 << std::endl;
+
+  auto converter3 = std::make_shared<FahrenheitToCelsiusConverter>(std::make_shared<CelsiusToKelvinConverter>());
+  double w3 = converter3->convert(value);
+  std::cout << "F2C 2 C2K " << w3 << std::endl;
+
+  auto converter4 = std::make_shared<InversionConverter>(converter3);
+  double w4 = converter4->convert(value);
+  std::cout << "M2km invert " << w4 << std::endl;
+
+  
   return 1;
 }

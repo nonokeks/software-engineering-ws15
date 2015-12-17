@@ -1,7 +1,6 @@
 #ifndef DOLLARTOEUROCONVERTER_H
 #define DOLLARTOEUROCONVERTER_H
 
-#include "decorator.hpp"
 #include "currencyconverter.hpp"
 #include <memory>
 

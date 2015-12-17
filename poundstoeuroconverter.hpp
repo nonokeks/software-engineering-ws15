@@ -1,7 +1,6 @@
 #ifndef POUNDSTOEUROCONVERTER_H
 #define POUNDSTOEUROCONVERTER_H
 
-#include "decorator.hpp"
 #include "currencyconverter.hpp"
 #include <memory>
 

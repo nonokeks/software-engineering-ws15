@@ -1,7 +1,6 @@
 #ifndef EUROTOPOUNDSCONVERTER_H
 #define EUROTOPOUNDSCONVERTER_H
 
-#include "decorator.hpp"
 #include "currencyconverter.hpp"
 #include <memory>
 

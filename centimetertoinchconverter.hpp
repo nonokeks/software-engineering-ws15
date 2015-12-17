@@ -1,7 +1,6 @@
 #ifndef CENTIMETERTOINCHCONVERTER_H
 #define CENTIMETERTOINCHCONVERTER_H
 
-#include "decorator.hpp"
 #include "lengthconverter.hpp"
 #include <memory>
 

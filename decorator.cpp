@@ -4,7 +4,8 @@ Decorator::Decorator(){}
 Decorator::Decorator(std::shared_ptr<UnitConverter> converter): UnitConverter{converter}, myconverter_{converter} {}
 
 /*
-double Decorator::convert(const double inValue)const{
+template <class T>
+double Decorator<T>::convert(const double inValue)const{
 	if (myconverter_ != nullptr)
 	{
 		return myconverter_->convert(inValue);
@@ -15,7 +16,8 @@ double Decorator::convert(const double inValue)const{
   
 }
 
-std::string Decorator::toString() const{
+template <class T>
+std::string Decorator<T>::toString() const{
 	if (myconverter_ != nullptr)
 	{
 		return myconverter_->toString();
@@ -26,11 +28,13 @@ std::string Decorator::toString() const{
   
 }
 
-void Decorator::print() const{
+template <class T>
+void Decorator<T>::print() const{
   std::cout << toString();
-}
+}*/
 
-void Decorator::link(std::shared_ptr<UnitConverter> c){
+/*
+void Decorator<T>::link(std::shared_ptr<UnitConverter> c){
   myconverter_ = c;
-}
-*/
+}*/
+

@@ -2,7 +2,6 @@
 #define CURRENCYCONVERTER_H
 
 #include "unitconverter.hpp"
-#include "decorator.hpp"
 #include <memory>
 
 class CurrencyConverter : public UnitConverter
