@@ -1,5 +1,0 @@
-maintest 0 0
-tinytest 4 0.000612736
-testing 1 0.00218415
-testingTinytest 1 0.00226212
----

@@ -30,7 +30,7 @@ int main(int argc, char* argv[])
   std::string value_s = " ";
   //bool invert " ";
 
-  std::cout << "Exampels: " << std::endl;
+  std::cout << "Examples: " << std::endl;
   std::cout << "dollartoeuro 10 " << std::endl;
   std::cout << "[converter] [value]" << std::endl;
 

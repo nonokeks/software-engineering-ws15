@@ -1,2 +1,0 @@
-/home/norina/Dokumente/MIBA3/SoftEng/software-engineering-ws15/build/CMakeFiles/main.dir
-/home/norina/Dokumente/MIBA3/SoftEng/software-engineering-ws15/build/CMakeFiles/tinytest.dir

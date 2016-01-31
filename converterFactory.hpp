@@ -17,6 +17,7 @@
 #include "milestokilometerconverter.hpp"
 #include "poundstoeuroconverter.hpp"
 #include "centimetertoinchconverter.hpp"
+#include "convertererror.hpp"
 
 
 class ConverterFactory

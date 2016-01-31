@@ -23,6 +23,7 @@ UnitConverter* ConverterFactory::create(std::string const& name) const{
 	}
 	else
 	{
+		throw ConverterError(name);
 		return nullptr;
 	}
 }
