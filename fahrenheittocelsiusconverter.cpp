@@ -11,6 +11,12 @@ TemperatureConverter{converter}{}
  *Out: celsius value of input fahrenheit
  */
 double FahrenheitToCelsiusConverter::convert(const double inFahrenheit)const{
+	//Exeption:
+	if(inFahrenheit < -459.67 || inFahrenheit > 523.67)
+	{
+		throw ValueError(inFahrenheit, "FahrenheitToCelsius");
+	}
+	//Calculation:
 	if (base_ != nullptr)
 	{
 		return base_->convert((inFahrenheit-32)/(1.8));

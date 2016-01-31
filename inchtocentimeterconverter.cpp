@@ -9,6 +9,12 @@ InchToCentimeterConverter::InchToCentimeterConverter(std::shared_ptr<LengthConve
  *Out: centimeter value of input inch
  */
 double InchToCentimeterConverter::convert(const double inInch)const{
+	//Exeption:
+	if(inInch < 0)
+	{
+		throw ValueError(inInch, "InchToCentimeter");
+	}
+	//Calculation:
 	if (base_ != nullptr)
 	{
 		return base_->convert(inInch*2.54);

@@ -9,6 +9,12 @@ DollarToEuroConverter::DollarToEuroConverter(std::shared_ptr<CurrencyConverter> 
  *Out: Euro value of input dollars as of 9.10.15
  */
 double DollarToEuroConverter::convert(const double inputDollars) const{
+	//Exeption:
+	if(inputDollars < 0)
+	{
+		throw ValueError(inputDollars, "DollarToEuro");
+	}
+	//Calculation:
 	if (base_ != nullptr)
 	{
 		return base_->convert(inputDollars*0.88);

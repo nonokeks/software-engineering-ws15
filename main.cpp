@@ -18,6 +18,8 @@
 #include "decorator.hpp"
 #include "inversionconverter.hpp"
 #include "command.hpp"
+#include "convertererror.hpp"
+#include "valueerror.hpp"
 
 int main(int argc, char* argv[])
 {
@@ -32,29 +34,40 @@ int main(int argc, char* argv[])
   std::cout << "dollartoeuro 10 " << std::endl;
   std::cout << "[converter] [value]" << std::endl;
 
+  try{
 
-  for (std::string line; std::getline(std::cin, line);) {
-    //std::cout << line << std::endl;
-    
-    std::stringstream s;
-    s << line;
-    s >> conversion;
+    for (std::string line; std::getline(std::cin, line);) {
+      //std::cout << line << std::endl;
+      
+      std::stringstream s;
+      s << line;
+      s >> conversion;
 
-    s << line;
-    s >> value_s;
+      s << line;
+      s >> value_s;
 
-    double value = std::stod(value_s);
+      double value = std::stod(value_s);
 
-    Command temp(conversion, &UnitConverter::convert, value);
-    commands.push_back(temp);
+      Command temp(conversion, &UnitConverter::convert, value);
+      commands.push_back(temp);
 
+    }
+
+    for (unsigned i = 0; i < commands.size(); ++i)
+    {
+      commands[i].execute();
+    }
   }
-
+  catch(ConverterError& error){ //converter
+    error.throwExeption();    
+  }
+  catch(ValueError& error){ //value
+    error.throwExeption();
+  }
+  catch(std::invalid_argument& error){ 
+    std::cout << "Error: Wrong number or type of arguments!" << std::endl;
+  }
   
-  for (unsigned i = 0; i < commands.size(); ++i)
-  {
-    commands[i].execute();
-  }
 
   
 
@@ -88,5 +101,5 @@ int main(int argc, char* argv[])
   std::cout << "M2km invert " << w4 << std::endl;
   */
   
-  return 1;
+  return 0;
 }

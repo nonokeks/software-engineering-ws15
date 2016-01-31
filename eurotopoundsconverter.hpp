@@ -2,6 +2,7 @@
 #define EUROTOPOUNDSCONVERTER_H
 
 #include "currencyconverter.hpp"
+#include "valueerror.hpp"
 #include <memory>
 
 class EuroToPoundsConverter : public CurrencyConverter

@@ -1,7 +1,7 @@
 #ifndef EUROTODOLLARCONVERTER_H
 #define EUROTODOLLARCONVERTER_H
 
-
+#include "valueerror.hpp"
 #include "currencyconverter.hpp"
 #include <memory>
 

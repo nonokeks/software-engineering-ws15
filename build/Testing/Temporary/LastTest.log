@@ -1,0 +1,21 @@
+Start testing: Jan 19 12:07 CET
+----------------------------------------------------------
+1/1 Testing: testingTinytest
+1/1 Test: testingTinytest
+Command: "/home/norina/Dokumente/MIBA3/SoftEng/software-engineering-ws15/build/tinytest"
+Directory: /home/norina/Dokumente/MIBA3/SoftEng/software-engineering-ws15/build
+"testingTinytest" start time: Jan 19 12:07 CET
+Output:
+----------------------------------------------------------
+............
+OK: 12
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"testingTinytest" end time: Jan 19 12:07 CET
+"testingTinytest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jan 19 12:07 CET

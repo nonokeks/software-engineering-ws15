@@ -2,6 +2,7 @@
 #define DOLLARTOEUROCONVERTER_H
 
 #include "currencyconverter.hpp"
+#include "valueerror.hpp"
 #include <memory>
 
 class DollarToEuroConverter : public CurrencyConverter

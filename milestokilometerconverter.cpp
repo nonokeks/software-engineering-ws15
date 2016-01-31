@@ -10,7 +10,12 @@ LengthConverter{converter} {}
  *Out: kilometer value of input miles
  */
 double MilesToKilometerConverter::convert(const double inMiles)const{
-	
+	//Exeption:
+	if(inMiles < 0)
+	{
+		throw ValueError(inMiles, "MilesToKilometer");
+	}
+	//Calculation:
 	if (base_ != nullptr)
 	{
 		return base_->convert(inMiles*1.609);

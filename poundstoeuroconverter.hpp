@@ -2,6 +2,7 @@
 #define POUNDSTOEUROCONVERTER_H
 
 #include "currencyconverter.hpp"
+#include "valueerror.hpp"
 #include <memory>
 
 

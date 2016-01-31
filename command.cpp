@@ -27,7 +27,8 @@ void Command::execute() const {
 	  std::cout << conv_ptr->toString() << " has converted "<< _value << " to " << ((conv_ptr.get()->*_action)(_value)) <<"!"<<std::endl; 
 	}
 	else{
-	std::cout << "ERROR: No Converter!" << std::endl;
+		throw ConverterError{_converter};
+		//std::cout << "ERROR: No Converter!" << std::endl;
 	}
 
 }

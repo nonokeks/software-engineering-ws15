@@ -3,6 +3,7 @@
 
 #include "unitconverter.hpp"
 #include "converterFactory.hpp"
+#include "convertererror.hpp"
 #include <memory>
 
 class Command {

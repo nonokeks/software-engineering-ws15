@@ -11,6 +11,12 @@ TemperatureConverter{converter}{}
  *Out: celsius value of input kelvin
  */
 double KelvinToCelsiusConverter::convert(const double inKelvin)const{
+	//Exeption:
+	if(inKelvin < 0 || inKelvin > 543.3)
+	{
+		throw ValueError(inKelvin, "KelvinToCelsius");
+	}
+	//Calculation:
 	if (base_ != nullptr)
 	{
 		return base_->convert(inKelvin - 273.15);

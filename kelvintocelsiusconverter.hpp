@@ -2,6 +2,7 @@
 #define KELVINTOCELSIUSCONVERTER_H
 
 #include "temperatureconverter.hpp"
+#include "valueerror.hpp"
 #include <memory>
 
 class KelvinToCelsiusConverter : public TemperatureConverter
