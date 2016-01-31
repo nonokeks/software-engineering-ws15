@@ -20,6 +20,10 @@
 //Factory
 #include "../converterFactory.hpp"
 
+//Error
+#include "../convertererror.hpp"
+#include "../valueerror.hpp"
+
 //celsius to fahrenheit
 int t1()
 {
@@ -254,8 +258,6 @@ int t11()
   return 1; // Always return a value different than 0 at test end.
 }
 
-
-
 /*---------------------------------------------------------------------------*/
 //Factorytest
 
@@ -278,6 +280,78 @@ int t12()
   return 1;
 }
 
+/*---------------------------------------------------------------------------*/
+//Errortests
+//Exeption for a not existing converter
+int t13()
+{
+  try{
+    auto factory = ConverterFactory::instance();
+    auto converter = factory->create("noconverter");
+    converter->convert(-84); //..so there is no warning anymore
+    TINYTEST_ASSERT(false);
+  }
+  catch(ConverterError& error){
+    TINYTEST_ASSERT(true);
+    return 1; 
+  }
+  return 1;
+
+}
+
+
+//Value out of range currencyconverterexapmle
+int t14()
+{
+  try{
+    auto factory = ConverterFactory::instance();
+    auto converter = factory->create("eurotopounds");
+    converter->convert(-84);
+    TINYTEST_ASSERT(false);
+  }
+  catch(ValueError& error){
+    TINYTEST_ASSERT(true);
+    return 1; 
+  }  
+  return 1; 
+}
+
+//Value out of range temperatureconverterexample
+int t15()
+{
+
+  try{
+    auto factory = ConverterFactory::instance();
+    auto converter = factory->create("kelvintocelsius");
+    converter->convert(900);
+    TINYTEST_ASSERT(false);
+  }
+  catch(ValueError& error){
+    TINYTEST_ASSERT(true);
+    return 1; 
+  }  
+  return 1; 
+
+}
+
+//Value out of range lengthconverterexample
+int t16()
+{
+  try{
+    auto factory = ConverterFactory::instance();
+    auto converter = factory->create("milestokilometer");
+    converter->convert(-0.3);
+    TINYTEST_ASSERT(false);
+  }
+  catch(ValueError& error){
+    TINYTEST_ASSERT(true);
+    return 1; 
+  }  
+  return 1; 
+
+}
+
+
 TINYTEST_START_SUITE(Converter);
   TINYTEST_ADD_TEST(t1);
   TINYTEST_ADD_TEST(t2);
@@ -291,6 +365,11 @@ TINYTEST_START_SUITE(Converter);
   TINYTEST_ADD_TEST(t10);
   TINYTEST_ADD_TEST(t11);
   TINYTEST_ADD_TEST(t12);
+  TINYTEST_ADD_TEST(t13);
+  TINYTEST_ADD_TEST(t14);
+  TINYTEST_ADD_TEST(t15);
+  TINYTEST_ADD_TEST(t16);
+
 TINYTEST_END_SUITE();
 
 TINYTEST_MAIN_SINGLE_SUITE(Converter);
